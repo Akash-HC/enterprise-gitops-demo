@@ -1,7 +1,7 @@
 resources: 
   - ../../../base/frontend/
 
-namespace: enterprise-argocd
+namespace: thinkpad-enterprise
 
 images:
   - name: FRONTEND_IMAGE

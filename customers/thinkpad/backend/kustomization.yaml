@@ -1,7 +1,7 @@
 resources:
   - ../../../base/backend/
 
-namespace: enterprise-argocd
+namespace: thinkpad-enterprise
 
 images:
   - name: BACKEND_IMAGE
