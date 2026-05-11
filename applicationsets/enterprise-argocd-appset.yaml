@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: enterprise-argocd-appset
+  namespace: argocd
+spec:
+
+  generators:
+    - git:
+        repoURL: https://github.com/Akash-HC/enterprise-gitops-demo.git
+        revision: main
+
+        directories:
+          - path: customers/enterprise-argocd/*
+
+  template:
+
+    metadata:
+      name: 'enterprise-argocd-{{path.basename}}'
+
+    spec:
+
+      project: enterprise-argocd-project
+
+      source:
+        repoURL: https://github.com/Akash-HC/enterprise-gitops-demo.git
+        targetRevision: master
+        path: '{{path}}'
+
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: enterprise-argocd
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
