@@ -1,0 +1,9 @@
+resources: 
+  - ../../../base/frontend/
+
+namespace: enterprise-argocd
+
+images:
+  - name: FRONTEND_IMAGE
+    newName: akashhc55/poc_sandbox_frontend
+    newTag: v6

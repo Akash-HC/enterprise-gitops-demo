@@ -1,0 +1,9 @@
+resources:
+  - ../../../base/backend/
+
+namespace: enterprise-argocd
+
+images:
+  - name: BACKEND_IMAGE
+    newName: akashhc55/poc_sandbox_backend
+    newTag: v6
