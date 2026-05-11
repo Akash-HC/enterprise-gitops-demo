@@ -8,7 +8,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/Akash-HC/enterprise-gitops-demo.git
-        revision: main
+        revision: master
 
         directories:
           - path: customers/enterprise-argocd/*
